@@ -22,7 +22,7 @@ export function createMessageHandler({ eventEmitter }) {
         break;
 
       case 'livechat:textarea_change':
-        eventEmitter.emit('textarea_change', message.event_data);
+        eventEmitter.emit('message_box_text', message.event_data);
         break;
     }
   };
