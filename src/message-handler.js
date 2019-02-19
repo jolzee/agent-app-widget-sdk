@@ -21,7 +21,7 @@ export function createMessageHandler({ eventEmitter }) {
         eventEmitter.emit('customer_details_section_button_click', message.event_data);
         break;
 
-      case 'livechat:textarea_change':
+      case 'livechat:message_box_text':
         eventEmitter.emit('message_box_text', message.event_data);
         break;
     }
