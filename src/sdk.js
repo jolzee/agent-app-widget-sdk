@@ -94,6 +94,14 @@ export function createSdk() {
       });
     },
 
+    sendQuickReplies(title, buttons) {
+      return this._sendMessage('send_quick_replies', {title, buttons});
+    },
+
+    sendCards(cards) {
+      return this._sendMessage('send_cards', Array.isArray(cards) ? cards : [cards]);
+    },
+
     _sendMessage(message, data = null) {
       if (message !== initMessage && !initialized) {
         throw new Error(
