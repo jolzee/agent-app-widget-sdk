@@ -1,3 +1,5 @@
+import { handleIncomingURL } from 'url-mirroring';
+
 export function createMessageHandler({ eventEmitter }) {
   return function handleMessage(message) {
     if (!message || !message.event_name) {
@@ -23,6 +25,10 @@ export function createMessageHandler({ eventEmitter }) {
 
       case 'livechat:message_box_text':
         eventEmitter.emit('message_box_text', message.event_data);
+        break;
+
+      case 'livechat:new_url':
+        handleIncomingURL(message.event_data);
         break;
     }
   };

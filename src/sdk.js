@@ -2,6 +2,7 @@ import mitt from 'mitt';
 import { createConnection } from './connection';
 import { createMessageHandler } from './message-handler';
 import { createComponentProcessor } from './customer-details';
+import { startURLMirroring, stopURLMirroring } from './url-mirroring';
 
 export function createSdk() {
   const initMessage = 'plugin_inited';
@@ -101,6 +102,14 @@ export function createSdk() {
     sendCards(cards) {
       return this._sendMessage('send_cards', Array.isArray(cards) ? cards : [cards]);
     },
+
+    startURLMirroring: () => {
+      startURLMirroring(({url}) => {
+        this._sendMessage('new_url', {url});
+      });
+    },
+
+    stopURLMirroring,
 
     _sendMessage(message, data = null) {
       if (message !== initMessage && !initialized) {
