@@ -103,8 +103,8 @@ export function createSdk() {
       return this._sendMessage('send_cards', Array.isArray(cards) ? cards : [cards]);
     },
 
-    startURLMirroring: () => {
-      startURLMirroring(({url}) => {
+    startURLMirroring() {
+      startURLMirroring((url) => {
         this._sendMessage('new_url', {url});
       });
     },
