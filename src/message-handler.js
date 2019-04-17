@@ -1,4 +1,4 @@
-import { handleIncomingURL } from 'url-mirroring';
+import { handleIncomingURL } from './url-mirroring';
 
 export function createMessageHandler({ eventEmitter }) {
   return function handleMessage(message) {
