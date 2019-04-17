@@ -109,7 +109,10 @@ export function createSdk() {
       });
     },
 
-    stopURLMirroring,
+    stopURLMirroring() {
+      stopURLMirroring();
+      this._sendMessage('new_url', { url: null });
+    },
 
     _sendMessage(message, data = null) {
       if (message !== initMessage && !initialized) {

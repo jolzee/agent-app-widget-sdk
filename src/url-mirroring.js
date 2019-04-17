@@ -17,5 +17,5 @@ export function stopURLMirroring() {
 }
 
 export function handleIncomingURL({url}) {
-  window.history.pushState({}, '', url);
+  window.location = url;
 }
