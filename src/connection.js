@@ -1,4 +1,4 @@
-import { connectToParent } from '@livechat/postmessage';
+import { connectToParent } from '@livechat/postmessage/es5';
 import { getQueryParam } from './helpers';
 
 export function createConnection({ handleMessage }) {
