@@ -1,3 +1,5 @@
+**Note: if you're developing a new widget, you should use the [Agent App SDK](http://github.com/livechat/agent-app-sdk) instead. This package isn't actively maintained anymore.**
+
 # LiveChat AgentApp Widget SDK
 
 This SDK allows you to create widget applications that can interact with the AgentApp.
